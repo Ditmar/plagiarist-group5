@@ -1,14 +1,22 @@
 import { createTheme, CssBaseline, ThemeProvider } from "@material-ui/core";
-import Roboto from '../assets/font/Roboto-Regular.ttf'
+import Roboto from '../assets/font/Roboto-Regular.ttf';
+import Mulish from '../assets/font/Mulish-Regular.ttf';
+
 const RobotoRegular = {
     fontFamily: 'Roboto-Regular',
     fontStyle: 'normal',
     fontWeight: 100,
     src: `url(${Roboto})`
 }
+const MulishRegular= {
+    fontFamily: 'Mulish-Regular',
+    fontStyle: 'normal',
+    fontWeight: 20,
+    src: `url(${Mulish})`
+}
 const theme = createTheme({
     typography: {
-        fontFamily: [RobotoRegular.fontFamily].join(',')
+        fontFamily: [RobotoRegular.fontFamily, MulishRegular.fontFamily].join(',')
     },
     palette: {
         primary: {
@@ -26,11 +34,11 @@ const theme = createTheme({
     },
     overrides: {
         MuiCssBaseline: {
-            '@global': {
-                '@font-face': [RobotoRegular]
+            '@global': {   
+                '@font-face': [MulishRegular]
             },
             body: {
-                fontFamily: ['Roboto-Regular']
+                fontFamily: ['Mulish-Regular']
             },
             'h1, h2, h3, h4, h5, h6': {
                 margin: 0,

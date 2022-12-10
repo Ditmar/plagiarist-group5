@@ -20,7 +20,6 @@ const setUpSocketIO = () => {
     // })
 }
 function App() {
-
   const items = [
     {
       to: '/',
