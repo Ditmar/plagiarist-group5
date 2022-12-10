@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Paper, Grid, Container, Avatar, TextField, InputLabel, OutlinedInput, InputAdornment, IconButton, Button, Link  } from "@material-ui/core";
+import { Paper, Grid, Container, Avatar, InputLabel, OutlinedInput, InputAdornment, IconButton, Button, Link  } from "@material-ui/core";
 import { Visibility } from "@mui/icons-material";
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import useStyles from './login.styles';
@@ -28,7 +28,7 @@ const Login = () => {
         weight: '',
         weightRange: '',
         showPassword: false,
-      });
+    });
 
     const handleChange = (prop) => (event) => {
         setValues({ ...values, [prop]: event.target.value });
@@ -39,7 +39,7 @@ const Login = () => {
           ...values,
           showPassword: !values.showPassword,
         });
-      };
+    };
     
     const handleMouseDownPassword = (event) => {
         event.preventDefault();
@@ -60,7 +60,7 @@ const Login = () => {
         }
     }
 
-      return (
+    return (
         <Grid container component='main' className={classes.principalPage}>
             <Container component={Paper} elevation={1} maxWidth='xs' className={classes.container}>
                 <div className={classes.contentsLogin}>
@@ -78,22 +78,16 @@ const Login = () => {
                         <div className={classes.subtittleTwo}>
                             Enter you email and password below
                         </div>
-                        <br/>
+                        <br/><br/>
                         <label className={classes.label}>
                             EMAIL
                         </label>
-                            <TextField 
-                                className={classes.textField}
-                                id="email"
-                                name='email'
-                                variant="outlined"
-                                placeholder='Email address'
-                                multiline
-                                fullWidth
-                                required
-                                onChange={e => setEmail(e.target.value)}
-                            />
-                        <br/>
+                        <OutlinedInput
+                            className={classes.textField}
+                            id='email'
+                            placeholder='Email address'
+                            required
+                        />
                         <br/>
                         <InputLabel htmlFor="outlined-adornment-password" className={classes.label}>
                             Password <Link href="#" underline="hover" className={classes.forgotPassword}>{'Forgot password?'}</Link>
@@ -121,7 +115,7 @@ const Login = () => {
                         />
                         <br/>
                         <Button type='submit' variant="contained" className={classes.buttonLogin}>Log In</Button>
-                        <br/>
+                        <br/><br/>
                         <div className={classes.footer}>
                             No tienes una cuenta? <Link href="#" underline="hover" className={classes.footerSignUp}> {'Sign up'}</Link>
                         </div>
@@ -129,6 +123,6 @@ const Login = () => {
                 </div>
             </Container>
         </Grid>
-      );
+    );
 }
 export default Login;

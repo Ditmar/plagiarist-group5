@@ -68,3 +68,12 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## login page web interface design Ticket pcg5-0001
+The design of the graphic interface of the login page can be seen in the following images captured while the project was running.
+
+## full screen login page
+![full screen login page image](./src/assets/images/loginInCompleteScreen.png)
+
+## responsive login
+![responsive login image](./src/assets/images/loginResponsive.png)
