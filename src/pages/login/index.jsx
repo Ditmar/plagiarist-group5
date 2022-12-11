@@ -1,34 +1,42 @@
 import * as React from 'react';
-import { Paper, Grid, Container, Avatar, InputLabel, OutlinedInput, InputAdornment, IconButton, Button, Link  } from "@material-ui/core";
+import { 
+    Paper, 
+    Grid, 
+    Container, 
+    Avatar, 
+    InputLabel, 
+    OutlinedInput, 
+    InputAdornment, 
+    IconButton, 
+    Button, 
+    Link  
+} from "@material-ui/core";
 import { Visibility } from "@mui/icons-material";
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import useStyles from './login.styles';
 import logoLogin from '../../assets/images/logologin.png';
 import { useState } from 'react';
 
-async function loginUser(credentials) {
-    return fetch('http://3.23.86.147/server/autenthication/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(credentials)
-    })
-      .then(data => data.json())
-   }
-
 const Login = () => {
     const classes = useStyles();
     const [email, setEmail] = useState();
-    const [password, setPassword] = useState();
-
+    const url='http://3.23.86.147/server/autenthication/login';
     const [values, setValues] = React.useState({
-        amount: '',
         password: '',
-        weight: '',
-        weightRange: '',
         showPassword: false,
     });
+    const passw = values.password;
+
+    async function loginUser(credentials) {
+        return fetch(url, {
+          method: 'POST',
+          body: JSON.stringify(credentials),
+          headers: {
+            'Content-Type': 'application/json'
+          },
+        })
+        .then(data => data.json())
+    }
 
     const handleChange = (prop) => (event) => {
         setValues({ ...values, [prop]: event.target.value });
@@ -36,9 +44,10 @@ const Login = () => {
 
     const handleClickShowPassword = () => {
         setValues({
-          ...values,
-          showPassword: !values.showPassword,
+            ...values,
+            showPassword: !values.showPassword,
         });
+        console.log(email)
     };
     
     const handleMouseDownPassword = (event) => {
@@ -48,11 +57,14 @@ const Login = () => {
     const handleSubmit = async e => {
         e.preventDefault();
         const response = await loginUser({
-            email
+            email,
+            passw
         });
-        if('accessToken' in response) {
+        if('email' && 'passw' in response) {
             alert("Sucess")
             .then((value) => {
+                localStorage.setItem('email', response['email']);
+                localStorage.setItem('passw', response['passw']);
                 window.location.href = "/";
             });
         } else {
@@ -64,7 +76,7 @@ const Login = () => {
         <Grid container component='main' className={classes.principalPage}>
             <Container component={Paper} elevation={1} maxWidth='xs' className={classes.container}>
                 <div className={classes.contentsLogin}>
-                    <form className={classes.form} onSubmit={handleSubmit}>
+                    <form className={classes.form} noValidate onSubmit={handleSubmit}>
                         <Avatar className={classes.avatar} src={logoLogin}/>
                         <br/>
                         <div className={classes.subtittleOne}>
@@ -85,8 +97,10 @@ const Login = () => {
                         <OutlinedInput
                             className={classes.textField}
                             id='email'
+                            name='email'
                             placeholder='Email address'
                             required
+                            onChange={e => setEmail(e.target.value)}
                         />
                         <br/>
                         <InputLabel htmlFor="outlined-adornment-password" className={classes.label}>
@@ -94,7 +108,8 @@ const Login = () => {
                         </InputLabel>
                         <OutlinedInput
                             className={classes.textField}
-                            id="outlined-adornment-password"
+                            id="password"
+                            name='password'
                             placeholder="Password"
                             type={values.showPassword ? 'text' : 'password'}
                             value={values.password}
@@ -117,7 +132,8 @@ const Login = () => {
                         <Button type='submit' variant="contained" className={classes.buttonLogin}>Log In</Button>
                         <br/><br/>
                         <div className={classes.footer}>
-                            No tienes una cuenta? <Link href="#" underline="hover" className={classes.footerSignUp}> {'Sign up'}</Link>
+                            No tienes una cuenta? 
+                        <Link href="#" underline="hover" className={classes.footerSignUp}> {'Sign up'} </Link>
                         </div>
                     </form>
                 </div>
@@ -125,4 +141,5 @@ const Login = () => {
         </Grid>
     );
 }
+
 export default Login;

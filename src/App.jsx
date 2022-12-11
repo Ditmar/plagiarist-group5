@@ -43,7 +43,7 @@ function App() {
             <LoaderComponent />
             <Routes>
               <Route path="/" element={<>
-                <Dashboard> 
+                <Dashboard>
                   <p>content </p> 
                 </Dashboard>
               </>}/>
