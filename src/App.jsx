@@ -36,7 +36,6 @@ function App() {
   ];
 
   return (
-    
       <Theme>
         <LoaderSpinnerContextProvider>
           <BrowserRouter>

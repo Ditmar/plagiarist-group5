@@ -10,6 +10,7 @@ const useStyles = makeStyles(theme => ({
     container: {
         height: '36.375rem',
         width: '23.75rem',
+        borderRadius: '0.5rem',
         fontFamily: 'Muslih-Regular',
         marginTop: theme.spacing(10),
         [theme.breakpoints.down(720 + theme.spacing(2) + 2)]: {
@@ -42,7 +43,6 @@ const useStyles = makeStyles(theme => ({
         left: '2',
         right: '2rem',
         top: '6.25rem',
-        alignItems: 'center',
         fontWeight: 700,
         fontSize: '1.188rem',
         lineHeight: '1.5rem',
@@ -95,8 +95,8 @@ const useStyles = makeStyles(theme => ({
         bottom: '0rem',
         background: '#FCFDFE',
         letterSpacing: '0.019rem',
-        borderRadius: '0.5rem'
-        
+        borderRadius: '0.5rem',
+        color: '#4B506D'
     },
     forgotPassword: {
         width: '5.625rem',
@@ -115,7 +115,7 @@ const useStyles = makeStyles(theme => ({
     buttonLogin: {
         left: '0rem',
         right: '0rem',
-        top: '0rem',
+        top: '0.5rem',
         bottom: '0rem',
         background: '#3751FF',
         fontStyle: 'normal',
@@ -127,7 +127,10 @@ const useStyles = makeStyles(theme => ({
         color: '#FFFFFF',
         textTransform: 'none',
         height: '3.125rem',
-        borderRadius: '0.5rem'
+        borderRadius: '0.5rem',
+        '&:hover': {
+            background: '#0000FF'
+        }
     },
     footer: {
         heigh: '1.25rem',
@@ -146,4 +149,5 @@ const useStyles = makeStyles(theme => ({
         color: '#3751FF'
     }
 }));
+
 export default useStyles;

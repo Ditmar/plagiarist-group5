@@ -77,7 +77,10 @@ const Login = () => {
             <Container component={Paper} elevation={1} maxWidth='xs' className={classes.container}>
                 <div className={classes.contentsLogin}>
                     <form className={classes.form} noValidate onSubmit={handleSubmit}>
-                        <Avatar className={classes.avatar} src={logoLogin}/>
+                        <Avatar 
+                            className={classes.avatar} 
+                            src={logoLogin}
+                        />
                         <br/>
                         <div className={classes.subtittleOne}>
                             Plagio Control
@@ -129,7 +132,12 @@ const Login = () => {
                             }
                         />
                         <br/>
-                        <Button type='submit' variant="contained" className={classes.buttonLogin}>Log In</Button>
+                        <Button 
+                            type='submit' 
+                            variant="contained" 
+                            className={classes.buttonLogin}>
+                                Log In
+                        </Button>
                         <br/><br/>
                         <div className={classes.footer}>
                             No tienes una cuenta? 
