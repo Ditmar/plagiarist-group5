@@ -6,7 +6,7 @@ const RobotoRegular = {
     fontFamily: 'Roboto-Regular',
     fontStyle: 'normal',
     fontWeight: 100,
-    src: `url(${Roboto})`
+    src: `url(${Mulish})`
 }
 const MulishRegular= {
     fontFamily: 'Mulish-Regular',
