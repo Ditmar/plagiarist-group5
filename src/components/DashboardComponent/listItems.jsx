@@ -2,32 +2,32 @@ import * as React from 'react';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import ListSubheader from '@mui/material/ListSubheader';
-import DashboardIcon from '@mui/icons-material/Dashboard';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import PeopleIcon from '@mui/icons-material/People';
-import BarChartIcon from '@mui/icons-material/BarChart';
-import LayersIcon from '@mui/icons-material/Layers';
-import AssignmentIcon from '@mui/icons-material/Assignment';
 import { Link } from 'react-router-dom';
+import SettingsIcon from '@mui/icons-material/Settings';
+import PieChartIcon from '@mui/icons-material/PieChart';
+import GroupsIcon from '@mui/icons-material/Groups';
+import WorkIcon from '@mui/icons-material/Work';
+import LightbulbIcon from '@mui/icons-material/Lightbulb';
+import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
+import SpokeSharpIcon from '@mui/icons-material/SpokeSharp';
 
 export const mainListItems = (
   <React.Fragment>
     <Link to="/">
       <ListItemButton>
-          <ListItemIcon>
-            <DashboardIcon />
-          </ListItemIcon>
-          <ListItemText primary="Dashboard" />
-        
+        <ListItemIcon >
+          <PieChartIcon style={{ color: '#9FA2B4'}} />
+        </ListItemIcon>
+        <ListItemText primary="Inicio" style={{ color: '#A4A6B3'}} />
+
       </ListItemButton>
     </Link>
     <Link to="/upload">
       <ListItemButton>
         <ListItemIcon>
-          <ShoppingCartIcon />
+          <WorkIcon style={{ color: '#9FA2B4' }} />
         </ListItemIcon>
-        <ListItemText primary="Orders" />
+        <ListItemText primary="Trabajos" style={{ color: '#A4A6B3', listStyle: 'none' }} />
       </ListItemButton>
     </Link>
     <Link to="/lastdocument">
@@ -40,47 +40,38 @@ export const mainListItems = (
     </Link>
     <ListItemButton>
       <ListItemIcon>
-        <PeopleIcon />
+        <LightbulbIcon style={{ color: '#9FA2B4' }} />
       </ListItemIcon>
-      <ListItemText primary="Customers" />
+      <ListItemText primary="Revisar Tesis" style={{ color: '#A4A6B3' }} />
     </ListItemButton>
     <ListItemButton>
       <ListItemIcon>
-        <BarChartIcon />
+        <GroupsIcon style={{ color: '#9FA2B4' }} />
       </ListItemIcon>
-      <ListItemText primary="Reports" />
+      <ListItemText primary="Listar Tesis" style={{ color: '#A4A6B3' }} />
     </ListItemButton>
     <ListItemButton>
       <ListItemIcon>
-        <LayersIcon />
+        <SpokeSharpIcon style={{ color: '#9FA2B4' }} />
       </ListItemIcon>
-      <ListItemText primary="Integrations" />
+      <ListItemText primary="Publicar Tesis" style={{ color: '#A4A6B3', fontSize: '16px' }} />
+    </ListItemButton>
+    <ListItemButton>
+      <ListItemIcon>
+        <LibraryBooksIcon style={{ color: '#9FA2B4' }} />
+      </ListItemIcon>
+      <ListItemText primary="Reportes Generales" style={{ color: '#A4A6B3' }} />
     </ListItemButton>
   </React.Fragment>
 );
 
 export const secondaryListItems = (
   <React.Fragment>
-    <ListSubheader component="div" inset>
-      Saved reports
-    </ListSubheader>
     <ListItemButton>
       <ListItemIcon>
-        <AssignmentIcon />
+        <SettingsIcon style={{ color: '#9FA2B4' }} />
       </ListItemIcon>
-      <ListItemText primary="Current month" />
-    </ListItemButton>
-    <ListItemButton>
-      <ListItemIcon>
-        <AssignmentIcon />
-      </ListItemIcon>
-      <ListItemText primary="Last quarter" />
-    </ListItemButton>
-    <ListItemButton>
-      <ListItemIcon>
-        <AssignmentIcon />
-      </ListItemIcon>
-      <ListItemText primary="Year-end sale" />
+      <ListItemText primary="Settings" style={{ color: '#A4A6B3' }} />
     </ListItemButton>
   </React.Fragment>
 );

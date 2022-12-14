@@ -21,6 +21,10 @@ import useStyles from '../Header/header.styles';
 
 
 
+import { Avatar, Button } from "@mui/material"
+import logo from '../../assets/ImageD/logoo.png'
+
+
 function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
@@ -80,7 +84,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
   }),
 );
 
-const  DashboardContent = ({children}) => {
+const DashboardContent = ({ children }) => {
   const [open, setOpen] = React.useState(true);
   const toggleDrawer = () => {
     setOpen(!open);
@@ -94,7 +98,8 @@ const  DashboardContent = ({children}) => {
         <AppBar position="absolute" open={open}>
           <Toolbar className={ classes.toolBar }
             sx={{
-              pr: '24px', // keep right padding when drawer closed
+              marginRight: '36px',
+              ...(open && { display: 'none' }),
             }}
           >
             <IconButton
@@ -129,28 +134,26 @@ const  DashboardContent = ({children}) => {
               px: [1],
             }}
           >
-            <IconButton onClick={toggleDrawer}>
-              <ChevronLeftIcon />
-            </IconButton>
-          </Toolbar>
-          <Divider />
-          <List component="nav">
-            {mainListItems}
-            <Divider sx={{ my: 1 }} />
-            {secondaryListItems}
-          </List>
-        </Drawer>
-        <Box
-          component="main"
+            Dashboard
+          </Typography>
+          <IconButton color="inherit">
+            <Badge badgeContent={4} color="secondary">
+              <NotificationsIcon />
+            </Badge>
+          </IconButton>
+        </Toolbar>
+      </AppBar>
+
+      <Drawer variant="permanent" open={open} >
+        <Toolbar
           sx={{
-            backgroundColor: (theme) =>
-              theme.palette.mode === 'light'
-                ? theme.palette.grey[100]
-                : theme.palette.grey[900],
-            flexGrow: 1,
-            height: '100vh',
-            overflow: 'auto',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'flex-end',
+            px: [1],
           }}
+          style={{ background: '#363740', color: '#A4A6B3' }}
+
         >
           <Toolbar />
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
@@ -159,6 +162,7 @@ const  DashboardContent = ({children}) => {
         </Box>
         
       </Box>
+    </Box>
   );
 }
 
