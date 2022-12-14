@@ -20,7 +20,6 @@ const setUpSocketIO = () => {
     // })
 }
 function App() {
-
   const items = [
     {
       to: '/',
@@ -37,14 +36,13 @@ function App() {
   ];
 
   return (
-    
       <Theme>
         <LoaderSpinnerContextProvider>
           <BrowserRouter>
             <LoaderComponent />
             <Routes>
               <Route path="/" element={<>
-                <Dashboard> 
+                <Dashboard>
                   <p>content </p> 
                 </Dashboard>
               </>}/>
