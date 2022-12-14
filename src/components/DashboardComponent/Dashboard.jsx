@@ -23,7 +23,8 @@ import useStyles from '../Header/header.styles';
 
 import { Avatar, Button } from "@mui/material"
 import logo from '../../assets/ImageD/logoo.png'
-
+import useStyles from './SidebarStyle'
+import Hidden from '@mui/material/Hidden';
 
 function Copyright(props) {
   return (
@@ -83,6 +84,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
     },
   }),
 );
+
 
 const DashboardContent = ({ children }) => {
   const [open, setOpen] = React.useState(true);
@@ -144,15 +146,16 @@ const DashboardContent = ({ children }) => {
         </Toolbar>
       </AppBar>
 
-      <Drawer variant="permanent" open={open} >
-        <Toolbar
-          sx={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'flex-end',
-            px: [1],
-          }}
-          style={{ background: '#363740', color: '#A4A6B3' }}
+      <Hidden smDown>
+        <Drawer variant="permanent" open={open} >
+          <Toolbar
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'flex-end',
+              px: [1],
+            }}
+            className={classes.drawer}
 
         >
           <Toolbar />

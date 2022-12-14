@@ -11,23 +11,29 @@ import LightbulbIcon from '@mui/icons-material/Lightbulb';
 import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
 import SpokeSharpIcon from '@mui/icons-material/SpokeSharp';
 
+
+
 export const mainListItems = (
   <React.Fragment>
-    <Link to="/">
+    <Link to="/" style={{ color: '#363740'}}>
       <ListItemButton>
         <ListItemIcon >
           <PieChartIcon style={{ color: '#9FA2B4'}} />
         </ListItemIcon>
-        <ListItemText primary="Inicio" style={{ color: '#A4A6B3'}} />
+        <ListItemText primary="Inicio"  style={{ color: '#A4A6B3'}} />
 
       </ListItemButton>
     </Link>
-    <Link to="/upload">
+  </React.Fragment>
+)
+export const workListItems = (
+  <React.Fragment>
+    <Link to="/upload" style={{ color: '#363740'}}>
       <ListItemButton>
         <ListItemIcon>
           <WorkIcon style={{ color: '#9FA2B4' }} />
         </ListItemIcon>
-        <ListItemText primary="Trabajos" style={{ color: '#A4A6B3', listStyle: 'none' }} />
+        <ListItemText primary="Trabajos" style={{ color: '#A4A6B3',}} />
       </ListItemButton>
     </Link>
     <Link to="/lastdocument">
@@ -42,25 +48,37 @@ export const mainListItems = (
       <ListItemIcon>
         <LightbulbIcon style={{ color: '#9FA2B4' }} />
       </ListItemIcon>
-      <ListItemText primary="Revisar Tesis" style={{ color: '#A4A6B3' }} />
+      <ListItemText primary="Revisar Tesis" style={{ color: '#A4A6B3',}} />
     </ListItemButton>
+  </React.Fragment>
+)
+export const toListItems = (
+  <React.Fragment>
     <ListItemButton>
       <ListItemIcon>
         <GroupsIcon style={{ color: '#9FA2B4' }} />
       </ListItemIcon>
       <ListItemText primary="Listar Tesis" style={{ color: '#A4A6B3' }} />
     </ListItemButton>
+  </React.Fragment>
+)
+export const postListItems = (
+  <React.Fragment>
     <ListItemButton>
       <ListItemIcon>
         <SpokeSharpIcon style={{ color: '#9FA2B4' }} />
       </ListItemIcon>
-      <ListItemText primary="Publicar Tesis" style={{ color: '#A4A6B3', fontSize: '16px' }} />
+      <ListItemText primary="Publicar Tesis" style={{ color: '#A4A6B3', }} />
     </ListItemButton>
+  </React.Fragment>
+)
+export const reportsListItems = (
+  <React.Fragment>
     <ListItemButton>
       <ListItemIcon>
         <LibraryBooksIcon style={{ color: '#9FA2B4' }} />
       </ListItemIcon>
-      <ListItemText primary="Reportes Generales" style={{ color: '#A4A6B3' }} />
+      <ListItemText primary="Reportes Generales" style={{ color: '#A4A6B3',  }} />
     </ListItemButton>
   </React.Fragment>
 );
