@@ -16,8 +16,9 @@ import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import { mainListItems, secondaryListItems } from './listItems';
-
 import Header from '../Header';
+import useStyles from '../Header/header.styles';
+
 
 
 function Copyright(props) {
@@ -85,10 +86,13 @@ const  DashboardContent = ({children}) => {
     setOpen(!open);
   };
 
+  const classes = useStyles();
+
+
   return (
       <Box sx={{ display: 'flex' }}>
         <AppBar position="absolute" open={open}>
-          <Toolbar style={{background:' #F7F8FC'}}
+          <Toolbar className={ classes.toolBar }
             sx={{
               pr: '24px', // keep right padding when drawer closed
             }}

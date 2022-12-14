@@ -1,4 +1,3 @@
-
 export const getSearch = async (parameter) => {
 	const url = `http://3.23.86.147/server/search`;
 	try {

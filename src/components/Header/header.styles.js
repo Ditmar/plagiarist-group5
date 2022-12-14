@@ -1,7 +1,6 @@
 import { makeStyles } from '@material-ui/core';
 import mq from '../../config/mq';
 
-
 const useStyles = makeStyles(theme => ({
     header: {
         width: '90%',
@@ -66,12 +65,12 @@ const useStyles = makeStyles(theme => ({
 
     field: {
         outline: 'none',
-        backgroundColor: '#FCFDFE',
-        border: '1px solid #F0F1F7',
+        backgroundColor: theme.palette.field.main,
+        border: `1px solid ${theme.palette.field.border}`,
         borderRadius: '8px',
         padding: '7px 10px',
         [mq('lg')]: {
-            backgroundColor: '#D9D9D9'
+            backgroundColor: theme.palette.field.bgLg 
         }
     },
 
@@ -84,9 +83,12 @@ const useStyles = makeStyles(theme => ({
     icon: {
         width: '20px',
         height: '20px',
-        color: '#C5C7CD'
-    }
+        color: theme.palette.primary.main 
+    },
 
+    toolBar: {
+        backgroundColor: theme.palette.primary.main
+    }
 }));
 
 export default useStyles;

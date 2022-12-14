@@ -20,7 +20,7 @@ const theme = createTheme({
     },
     palette: {
         primary: {
-            main: '#645CAA'
+            main: '#F7F8FC'
         },
         secondary: {
             main: '#A084CA'
@@ -30,6 +30,11 @@ const theme = createTheme({
         }, 
         fourth: {
             main: '#EBC7E8'
+        },
+        field: {
+            main: '#FCFDFE',
+            border: '#F0F1F7',
+            bgLg: '#D9D9D9'
         }
     },
     overrides: {
