@@ -9,8 +9,7 @@ import Dashboard from './components/DashboardComponent/Dashboard';
 import UploadComponent from './components/UploadComponent';
 import LoaderComponent from './components/LoaderComponent';
 import LoaderSpinnerContextProvider from './context/LoaderSpinnerContextProvider';
-import LastDocument from './components/LastDocuments/LastDocument';
-/*import { io } from "socket.io-client";
+import { io } from "socket.io-client";
 import { useEffect } from 'react';
 import socketIoEndpoint from './async/services/socketIO';
 const setUpSocketIO = () => {
@@ -19,7 +18,7 @@ const setUpSocketIO = () => {
     //   console.log(room);
     //   socket.emit('joinroom', room);
     // })
-}*/
+}
 function App() {
   const items = [
     {
@@ -33,11 +32,7 @@ function App() {
     {
       to: '/login',
       name: 'Login'
-    },
-    {
-      to: '/lastdocument',
-      name: 'Last Document'
-    },
+    }
   ];
 
   return (
@@ -54,11 +49,6 @@ function App() {
               <Route path="/upload" element={<>
                 <Dashboard> 
                   <UploadComponent />
-                </Dashboard>
-              </> } />
-              <Route path="/lastdocument" element={<>
-                <Dashboard> 
-                  <LastDocument />
                 </Dashboard>
               </> } />
               <Route path="/login" element={<Login />} />

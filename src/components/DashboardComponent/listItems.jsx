@@ -30,14 +30,6 @@ export const mainListItems = (
         <ListItemText primary="Orders" />
       </ListItemButton>
     </Link>
-    <Link to="/lastdocument">
-      <ListItemButton>
-        <ListItemIcon>
-          <AssignmentIcon/>
-        </ListItemIcon>
-        <ListItemText primary="Last Document" />
-      </ListItemButton>
-    </Link>
     <ListItemButton>
       <ListItemIcon>
         <PeopleIcon />
