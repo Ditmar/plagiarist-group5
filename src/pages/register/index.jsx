@@ -155,8 +155,8 @@ const Login = () => {
                             className={classes.textField}
                             id="repassword"
                             name='repassword'
-                            placeholder="rePassword"
-                            type={values.showRePassword ? 'text' : 'repassword'}
+                            placeholder="RePassword"
+                            type={values.showRePassword ? 'text' : 'password'}
                             value={values.repassword}
                             onChange={handleChange('repassword')}
                             endAdornment={
@@ -183,7 +183,7 @@ const Login = () => {
                         <br/>
                         <div className={classes.footer}>
                             No tienes una cuenta? 
-                        <Link href="#" underline="hover" className={classes.footerLogin}> {'Login'} </Link>
+                        <Link href="http://localhost:3000/login" underline="hover" className={classes.footerLogin}> {'Login'} </Link>
                         </div>
                     </form>
                 </div>

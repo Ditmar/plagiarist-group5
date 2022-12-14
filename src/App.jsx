@@ -54,7 +54,7 @@ function App() {
                 </Dashboard>
               </> } />
               <Route path="/login" element={<Login />} />
-              <Route path='/server/autenthication/register' element={<Register/>} />
+              <Route path="/register" element={<Register/>} />
             </Routes>
           </BrowserRouter>
         </LoaderSpinnerContextProvider>
