@@ -12,7 +12,7 @@ const useStyles = makeStyles(theme => ({
         letterSpacing: '0.025rem',
         color: '#252733',
         [mq('md')]: {
-            
+            display: 'block'
 
         }
     },
