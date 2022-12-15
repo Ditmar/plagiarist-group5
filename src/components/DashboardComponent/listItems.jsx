@@ -36,14 +36,10 @@ export const workListItems = (
         <ListItemText primary="Trabajos" style={{ color: '#A4A6B3',}} />
       </ListItemButton>
     </Link>
-    <Link to="/lastdocument">
-      <ListItemButton>
-        <ListItemIcon>
-          <AssignmentIcon/>
-        </ListItemIcon>
-        <ListItemText primary="Last Document" />
-      </ListItemButton>
-    </Link>
+  </React.Fragment>
+  )
+  export const reviewListItems = (
+  <React.Fragment>
     <ListItemButton>
       <ListItemIcon>
         <LightbulbIcon style={{ color: '#9FA2B4' }} />
