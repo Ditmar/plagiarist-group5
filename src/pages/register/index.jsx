@@ -16,7 +16,7 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import useStyles from './register.styles';
 import logoLogin from '../../assets/logo/logoregister.png';
 import { useState } from 'react';
-import  post  from '../../async/services/socketRe'
+import  post  from '../../async/services/socketIO';
 
 const Login = () => {
     const classes = useStyles();
