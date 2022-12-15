@@ -1,13 +1,94 @@
 import { makeStyles } from '@material-ui/core';
+import mq from '../../config/mq';
 
 const useStyles = makeStyles(theme => ({
     header: {
-        display: 'flex',
-        background: theme.palette.primary.main
+        width: '90%',
+        margin: '0 auto',
     },
-    h1: {
-        color: theme.palette.fourth.main,
-        marginLeft: '1rem'
+
+    headerContainer: {
+        margin: '20px 0',
+        display: 'grid',
+        gridTemplateColumns: 'auto auto',
+        alignItems: 'center',
+        [mq('lg')]: {
+            gridTemplateColumns: '15% 60% 25%'
+        },
+    },
+
+    title: {
+        fontSize: '24px',
+        fontWeight: '700'
+    },
+
+    headerBox: {    
+        gridColumn: '2 / 3',
+        gridRow: '1 / 2',
+        display: 'grid',
+        gridTemplateColumns: '70% 30%',
+        alignItems: 'center',
+        [mq('lg')]: {
+            gridColumn: '3 / 4'
+        }
+    },
+
+    name: {
+        marginRight: '10px',
+        textAlign: 'right',
+    },
+
+    divImage: {
+        margin: '0 auto'
+    },
+
+    imagePhoto: {
+        width: '50px',
+        height: '50px',
+        borderRadius: '50%',
+    },
+
+    formHeader: {
+        width: '100%',
+        gridColumn: '1 / 3',
+        display: 'grid',
+        gridTemplateColumns: '80% 20%',
+        alignItems: 'center',
+        gap: '5px',
+        marginTop: '10px',
+        [mq('lg')]: {
+            gridRow: '1 / 2',
+            gridColumn: '2 / 3',
+            marginTop: '0'
+        }
+    },
+
+    field: {
+        outline: 'none',
+        backgroundColor: theme.palette.field.main,
+        border: `1px solid ${theme.palette.field.border}`,
+        borderRadius: '8px',
+        padding: '7px 10px',
+        [mq('lg')]: {
+            backgroundColor: theme.palette.field.bgLg 
+        }
+    },
+
+    icons: {
+        margin: '0 auto',
+        display: 'flex',
+        gap: '15px'
+    },
+
+    icon: {
+        width: '20px',
+        height: '20px',
+        color: theme.palette.primary.main 
+    },
+
+    toolBar: {
+        backgroundColor: theme.palette.primary.main
     }
 }));
+
 export default useStyles;
