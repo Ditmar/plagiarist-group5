@@ -16,6 +16,7 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import useStyles from './register.styles';
 import logoLogin from '../../assets/logo/logoregister.png';
 import { useState } from 'react';
+import  post  from '../../async/services/socketRe'
 
 const Login = () => {
     const classes = useStyles();
@@ -29,13 +30,14 @@ const Login = () => {
     });
     const passw = values.password;
     const repassw = values.repassword;
+    
 
     async function loginUser(credentials) {
         return fetch(url, {
-          method: 'POST',
-          body: JSON.stringify(credentials),
-          headers: {
-            'Content-Type': 'application/json'
+            const:  await post(credentials),
+            body: JSON.stringify(credentials),
+            headers: {
+                'Content-Type': 'application/json'
           },
         })
         .then(data => data.json())

@@ -2,7 +2,8 @@ import { makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles(theme => ({
     principalPage: {
-        background: '#363740',
+        background: theme.palette.primary.principalPage,
+        color: theme.palette.color.contrastText,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         height: '120vh'
@@ -149,7 +150,8 @@ const useStyles = makeStyles(theme => ({
         right: '0rem',
         top: '0.5rem',
         bottom: '0rem',
-        background: '#3751FF',
+        background: theme.palette.primary.buttonRegister,
+        color: theme.palette.color.contrastText,
         //boxShadow: '0 0.25rem 0.75rem',
         fontFamily: 'Mulish',
         fontStyle: 'normal',
