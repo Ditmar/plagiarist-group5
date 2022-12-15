@@ -13,6 +13,8 @@ import LastDocument from './components/LastDocuments/LastDocument';
 /*import { io } from "socket.io-client";
 import { useEffect } from 'react';
 import socketIoEndpoint from './async/services/socketIO';
+import Register from './pages/register';
+
 const setUpSocketIO = () => {
     //socket = io(uri);
     // socket.on('serverresponse', (room) => {
@@ -64,6 +66,7 @@ function App() {
                 </Dashboard>
               </> } />
               <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register/>} />
             </Routes>
           </BrowserRouter>
         </LoaderSpinnerContextProvider>
