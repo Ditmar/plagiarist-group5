@@ -15,11 +15,17 @@ import Link from '@mui/material/Link';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import { mainListItems, secondaryListItems } from './listItems';
+import { mainListItems, secondaryListItems,workListItems
+ ,reviewListItems, toListItems,postListItems,reportsListItems} from './listItems';
 import Header from '../Header';
 import useStyles from '../Header/header.styles';
 
 
+
+import { Avatar, Button } from "@mui/material"
+import logo from '../../assets/ImageD/logoo.png'
+import useStyle from './SidebarStyle'
+import Hidden from '@mui/material/Hidden';
 
 function Copyright(props) {
   return (
@@ -80,17 +86,18 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
   }),
 );
 
-const  DashboardContent = ({children}) => {
+
+const DashboardContent = ({ children }) => {
   const [open, setOpen] = React.useState(true);
   const toggleDrawer = () => {
     setOpen(!open);
   };
 
   const classes = useStyles();
-
+  const classe = useStyle(); 
 
   return (
-      <Box sx={{ display: 'flex' }}>
+    <Box sx={{ display: 'flex' }}>
         <AppBar position="absolute" open={open}>
           <Toolbar className={ classes.toolBar }
             sx={{
@@ -107,7 +114,7 @@ const  DashboardContent = ({children}) => {
                 ...(open && { display: 'none' }),
               }}
             >
-              <MenuIcon />
+              <MenuIcon className={classe.menunIcon} />
             </IconButton>
             <Typography
               component="h1"
@@ -120,8 +127,9 @@ const  DashboardContent = ({children}) => {
             </Typography>
           </Toolbar>
         </AppBar>
-        <Drawer variant="permanent" open={open}>
-          <Toolbar
+        <Hidden xsDown>
+        <Drawer className={classe.drawer} variant="permanent" open={open}>
+          <Toolbar style={{background:'#363740',margin:'0px'}}
             sx={{
               display: 'flex',
               alignItems: 'center',
@@ -130,16 +138,42 @@ const  DashboardContent = ({children}) => {
             }}
           >
             <IconButton onClick={toggleDrawer}>
-              <ChevronLeftIcon />
+            <Button>
+              <Box  
+                component='div'
+                sx={{
+                  width: '100%',
+                  display: 'flex',
+                  justifyContent: 'space-evenly',
+                  alignItems: 'center'
+                }}
+              >
+                <Avatar className={classe.avatar} alt="logo" src={logo} />
+                <Typography sx={{
+                  color: '#A4A6B3',
+                  fontWeight: '700',
+                  fontFamily: ['Mulish', 'sans-serif'].join(),
+                }} variant="h6"
+                style={{marginLeft:'10px', textTransform:'none'}}
+                >Plagio Control
+                </Typography>
+              </Box>
+            </Button>
             </IconButton>
           </Toolbar>
           <Divider />
-          <List component="nav">
-            {mainListItems}
-            <Divider sx={{ my: 1 }} />
-            {secondaryListItems}
+          <List className={classe.nav} component="nav">
+            <p className={classe.hover}>{mainListItems}</p>
+            <p className={classe.hover}>{workListItems}</p>
+            <p className={classe.hover}>{reviewListItems}</p>
+            <p className={classe.hover}>{toListItems}</p>
+            <p className={classe.hover}>{postListItems}</p>
+            <p className={classe.hover}>{reportsListItems}</p>
+            <Divider className={classe.divider} sx={{ my: 1 }} />
+            <p className={classe.hover}>{secondaryListItems}</p>
           </List>
         </Drawer>
+      </Hidden>
         <Box
           component="main"
           sx={{

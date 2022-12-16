@@ -1,19 +1,14 @@
 import { createTheme, CssBaseline, ThemeProvider } from "@material-ui/core";
-<<<<<<< HEAD
-import  Mulish  from '../assets/font/Mulish-Regular.ttf'
-const MulishRegular = {
-=======
-import Roboto from '../assets/font/Roboto-Regular.ttf';
-import Mulish from '../assets/font/Mulish-Regular.ttf';
-
-const RobotoRegular = {
+import  Mulish  from '../assets/font/Mulish-Regular.ttf';
+//import Roboto from '../assets/font/Roboto-Regular.ttf';
+//import Mulish from '../assets/font/Mulish-Regular.ttf';
+const RobotoRegula = {
     fontFamily: 'Roboto-Regular',
     fontStyle: 'normal',
     fontWeight: 100,
     src: `url(${Mulish})`
 }
 const MulishRegular= {
->>>>>>> master
     fontFamily: 'Mulish-Regular',
     fontStyle: 'normal',
     fontWeight: 100,
